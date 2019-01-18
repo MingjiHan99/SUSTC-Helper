@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="page">
+
+  <view class="page__hd">
+        <view class="page__title">Welcome</view>
+        <view class="page__desc">本程序无法获得您的学生账号和密码，您的个人信息仅用于从教务系统中获取成绩</view>
+  </view>
+
+  <view class="weui-cells__title">账号</view>
+  <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input"  bindinput='userSID' placeholder="输入您的学号" />
+                </view>
+            </view>
+  </view> 
+
+  <view class="weui-cells__title">密码</view>
+  <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" bindinput="userPwd" password="true" name="pwd" placeholder='输入您的密码' />
+                </view>
+            </view>
+  </view> 
+  <view class="page__hd"> 
+   <button class="weui-btn" type="primary" bindtap="msg">登录</button>
+
+  </view>
+ 
+</view>

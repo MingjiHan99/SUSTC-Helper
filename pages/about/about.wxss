@@ -1,0 +1,19 @@
+/* pages/about/about.wxss */
+
+
+.avatar{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    align-items:center;  
+    margin-top:15px;
+    margin-bottom:15px;      
+}
+
+
+.about__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: center;
+    font-size: 14px;
+}

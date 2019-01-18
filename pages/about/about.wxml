@@ -1,0 +1,38 @@
+<view class="page">
+ 
+
+<view class="page__hd">
+  <view class="about__title">
+  南科助手
+  </view>
+
+
+    
+    <view style="display:flex; justify-content:center; align-items:center;">
+      <image  class="avatar" src="./han.jpg" style="border-radius:75%" mode="widthFix"> 
+      </image> 
+    </view>
+    <view class="about__desc">
+    前端/后端:Murphy Han@Github
+      </view>
+    <view class="about__desc">
+    邮箱：11711416@mail.sustc.edu.cn
+      </view>
+    </view>
+    
+    <view style="display:flex; justify-content:center; align-items:center;">
+      <image  class="avatar" src="./wycer.jpg" style="border-radius:75%" mode="widthFix"> 
+      </image> 
+    </view>
+    <view class="about__desc">
+    爬虫/技术支持:Wycers@Github
+      </view>
+    <view class="about__desc">
+    邮箱：11711918@mail.sustc.edu.cn
+      </view>
+    </view>
+
+  
+
+
+

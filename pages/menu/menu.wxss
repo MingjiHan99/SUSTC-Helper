@@ -1,0 +1,52 @@
+page,
+.page,
+
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.navbar_css{
+  background: #FFFFFF;
+
+}
+.weui-tab__content{
+    padding-top: 15px;
+    text-align: center;
+}
+
+.title{
+   padding-top: 0px;
+   padding: 10px;
+   text-align: center;
+   font-size: 30px;
+}
+
+.left_title{
+   padding-left:15px;
+   text-align: left;
+   font-size: 20px;
+}
+
+.left_text{
+   color: #aaa;
+   padding :20px;
+   text-align: left;
+   font-size: 15px;
+}
+
+.right_text{
+   color: #aaa;
+   padding :20px;
+   text-align: right;
+   font-size: 15px;
+}
+
+.left_align{
+  text-align: left;
+}
+
+.right_align{
+  text-align: right;
+}
