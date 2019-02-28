@@ -112,47 +112,48 @@ Page({
       var count = 0;
       var totalCredit = 0;
       for(var i = 0 ; i < this.data.checkboxItems.length; i ++){
-          var temp = parseInt(this.data.checkboxItems[i]['num']);
+          var temp = parseFloat(this.data.checkboxItems[i]['num']);
           console.log(temp);
-          if(!isNaN(temp) && this.data.checkboxItems[i].checked == true){
+          if(!isNaN(temp) &&  this.data.checkboxItems[i].checked == true){
+            if(temp > 60){
               count++;
-              if(temp >= 97){
-                res += 4.00 *parseInt( this.data.checkboxItems[i].credit);
+              if (temp >= 97) {
+                res += 4.00 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 93){
-                res += 3.94 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 93) {
+                res += 3.94 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 90){
-                res += 3.85 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 90) {
+                res += 3.85 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 87){
-                res += 3.73 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 87) {
+                res += 3.73 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 83){
-                res += 3.55 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 83) {
+                res += 3.55 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 80){
-                res += 3.32 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 80) {
+                res += 3.32 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 77){
-                res += 3.09 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 77) {
+                res += 3.09 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 73){
-                res += 2.78 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 73) {
+                res += 2.78 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 67){
-                res += 2.42 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 67) {
+                res += 2.42 * parseFloat(this.data.checkboxItems[i].credit);
               }
-              else if(temp >= 63){
-                res += 1.63 *parseInt( this.data.checkboxItems[i].credit);
-              }
-              else if(temp >= 60){
-                res += 1.15 *parseInt( this.data.checkboxItems[i].credit);
+              else if (temp >= 63) {
+                res += 1.63 * parseFloat(this.data.checkboxItems[i].credit);
               }
               else {
-                res += 0.00;
+                res += 1.15 * parseFloat(this.data.checkboxItems[i].credit);
               }
-            totalCredit +=parseInt( this.data.checkboxItems[i].credit);
+              
+              totalCredit += parseFloat(this.data.checkboxItems[i].credit);
+            }
+          
           }
       }
       if(count == 0){
