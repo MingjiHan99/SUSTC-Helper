@@ -3,7 +3,7 @@ const app = getApp();
 let that = this;
 Page({
   data: {
-    tabs: ["GPA", "课表","设置"],
+    tabs: ["GPA","设置"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0, 
@@ -140,6 +140,9 @@ Page({
               }
               else if (temp >= 73) {
                 res += 2.78 * parseFloat(this.data.checkboxItems[i].credit);
+              }
+              else if (temp >= 70){
+                res += 2.42 * parseFloat(this.data.checkboxItems[i].credit);
               }
               else if (temp >= 67) {
                 res += 2.42 * parseFloat(this.data.checkboxItems[i].credit);

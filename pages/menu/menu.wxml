@@ -51,8 +51,8 @@
 
                 </view>
                 </view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">开发中</view>
-                 <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+             
+                 <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
                        <view class="weui-cells__title left_align"></view>
                         <view class="weui-cells weui-cells_after-title">
                             <navigator url="/pages/index/index" open-type="redirect" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
