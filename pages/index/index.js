@@ -33,16 +33,19 @@ Page({
          //   console.log("fuck you");
          for (var i = 0; i < app.globalData.periods.length; i++) {
            //     console.log(app.globalData.periods[i]);
+           var periodGrade = app.globalData.grade[app.globalData.periods[i]]
+           if(typeof(periodGrade) != undefined){
+              for (var key in periodGrade) {
+                if (typeof (key) != "undefined") {
 
-           for (var key in app.globalData.grade[app.globalData.periods[i]]) {
-             if (typeof (key) != undefined) {
-               //    console.log(key);
-              // console.log(app.globalData.grade[app.globalData.periods[i]][key][1]);
-               items.push({ name: key, num: app.globalData.grade[app.globalData.periods[i]][key][1], grade: app.globalData.grade[app.globalData.periods[i]][key][0] + " " + app.globalData.grade[app.globalData.periods[i]][key][1], credit: app.globalData.grade[app.globalData.periods[i]][key][2], value: String(size), checked: true });
-               size = size + 1;
-             }
+                  items.push({ name: key, num: periodGrade[key][1], grade: periodGrade[key][0] + " " + periodGrade[key][1], credit: periodGrade[key][2], value: String(size), checked: true });
+                  size = size + 1;
+                }
+
+              }
 
            }
+           
          }
 
          app.globalData.defaultItems = items;
