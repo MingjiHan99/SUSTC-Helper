@@ -104,6 +104,21 @@ Page({
       url: '../logs/logs'
     })
   },
+  bindUsername: function(e) {
+    this.setData({
+      username: e.detail.value
+    })
+  },
+  bindPassword: function(e) {
+    this.setData({
+      password: e.detail.value
+    })
+  },
+  bindRemember: function (e) {
+    this.setData({
+      remember: e.detail.value
+    })
+  },
   onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
