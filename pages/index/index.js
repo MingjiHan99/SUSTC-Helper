@@ -21,6 +21,7 @@ Page({
       });
       return
     }
+    console.log(this.data.remember)
     if (this.data.remember) {
       wx.setStorageSync('username', this.data.username)
       wx.setStorageSync('password', this.data.password)
@@ -102,19 +103,6 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
-  },
-  userSID: function(e) {
-    this.setData({
-      username: e.detail.value
-    })
-  },
-  userPwd: function(e) {
-    this.setData({
-      password: e.detail.value
-    })
-  },
-  rememberPwd: function(e) {
-    console.log(e.detail)
   },
   onLoad: function() {
     if (app.globalData.userInfo) {
