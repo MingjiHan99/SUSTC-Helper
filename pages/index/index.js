@@ -13,11 +13,23 @@ Page({
     password:''
   },
   msg:function(){
+    if(this.data.username == '' || this.data.password == ''){
+      wx.showModal({
+        content: '学号和密码不能为空',
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            //console.log('确定')
+          }
+        }
+      });
+      return 
+    }
     wx.showLoading({
       title: '登录中',
     })
     wx.request({
-      url: 'https://www.mingjihan.club/gpa/',
+      url: 'https://ji.s-cry.com/gpa',
       method:'POST',
       data: {
         'username':this.data.username,
