@@ -2,31 +2,42 @@
 <view class="page">
 
   <view class="page__hd">
-        <view class="page__title">Welcome</view>
-        <view class="page__desc">您的账号和密码仅用于从教务系统中获取成绩</view>
-        <view class="page__desc">We have 1200+ users now. Many thanks!</view>
+    <view class="page__title">Welcome</view>
+    <view class="page__desc">您的账号和密码仅用于从教务系统中获取成绩</view>
+    <view class="page__desc">We have 1200+ users now. Many thanks!</view>
   </view>
 
   <view class="weui-cells__title">学号</view>
   <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__bd">
-                    <input class="weui-input"  bindinput='userSID' placeholder="输入您的学号" />
-                </view>
-            </view>
-  </view> 
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput='userSID' placeholder="输入您的学号" />
+      </view>
+    </view>
+  </view>
 
   <view class="weui-cells__title">密码</view>
   <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-                <view class="weui-cell__bd">
-                    <input class="weui-input" bindinput="userPwd" password="true" name="pwd" placeholder='输入您的密码' />
-                </view>
-            </view>
-  </view> 
-  <view class="page__hd"> 
-   <button class="weui-btn" type="primary" bindtap="msg">登录</button>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <input class="weui-input" bindinput="userPwd" password name="pwd" placeholder='输入您的密码' />
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">其他</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_switch">
+      <view class="weui-cell__bd">在本地记住此账号密码</view>
+      <view class="weui-cell__ft">
+        <switch checked='{{remember}}' />
+      </view>
+    </view>
+  </view>
+
+  <view class="page__hd">
+    <button class="weui-btn" type="primary" bindtap="msg">登录</button>
 
   </view>
- 
+
 </view>
