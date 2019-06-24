@@ -5,10 +5,6 @@ var WxParse = require('../../wxParse/wxParse.js');
 var that = this;
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     username: wx.getStorageSync('username') || '',
     password: wx.getStorageSync('password') || '',
     remember: true
@@ -21,7 +17,6 @@ Page({
       });
       return
     }
-    console.log(this.data.remember)
     if (this.data.remember) {
       wx.setStorageSync('username', this.data.username)
       wx.setStorageSync('password', this.data.password)
@@ -43,14 +38,15 @@ Page({
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: (res) => {
-
+        app.globalData.account = {
+          'username': this.data.username,
+          'password': this.data.password
+        }
         app.globalData.grade = res.data;
         if (res.data['state'] == true) {
           var items = []
           var size = 0
-          //   console.log("fuck you");
           for (var i = 0; i < app.globalData.periods.length; i++) {
-            //     console.log(app.globalData.periods[i]);
             var periodGrade = app.globalData.grade[app.globalData.periods[i]]
             if (typeof(periodGrade) != undefined) {
               for (var key in periodGrade) {
@@ -95,8 +91,6 @@ Page({
         wx.hideLoading();
       }
     })
-
-
   },
   //事件处理函数
   bindViewTap: function() {
@@ -117,42 +111,6 @@ Page({
   bindRemember: function (e) {
     this.setData({
       remember: e.detail.value
-    })
-  },
-  onLoad: function() {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
   }
 })
